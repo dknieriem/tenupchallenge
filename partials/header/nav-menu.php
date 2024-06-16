@@ -2,7 +2,7 @@
 // Partial: Header/Nav Menu
 ?>
 <nav id="nav">
-  <button class="nav-open"><span class="icon icon-menu nav-open:icon-close"></span></button>
+  <button class="nav-toggle"><span class="icon icon-menu nav-open:icon-close"></span></button>
   <?php
 		wp_nav_menu(
 			array(

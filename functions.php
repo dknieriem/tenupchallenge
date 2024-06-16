@@ -85,3 +85,52 @@ if ( ! function_exists( 'tenupchallenge_setup' ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'tenupchallenge_setup' );
+
+function tenupchallenge_scripts() {
+	wp_enqueue_style( 'tenupchallenge-style', get_stylesheet_uri() );
+	wp_style_add_data( 'tenupchallenge-style', 'rtl', 'replace' );
+
+	wp_enqueue_script( 'tenupchallenge-nav', get_template_directory_uri() . '/js/nav.js', array(), false, true );
+}
+add_action( 'wp_enqueue_scripts', 'tenupchallenge_scripts' );
+
+function tenupchallenge_install() {
+
+  $menu_exists = wp_get_nav_menu_object('tenupchallenge-primary');
+
+  if( !$menu_exists){
+    $menu_id = wp_create_nav_menu('tenupchallenge-primary');
+
+    // Set up default BuddyPress links and add them to the menu.
+    wp_update_nav_menu_item($menu_id, 0, array(
+        'menu-item-title' =>  __('News'),
+        'menu-item-classes' => 'home',
+        'menu-item-url' => home_url( '/' ), 
+        'menu-item-status' => 'publish'));
+
+    wp_update_nav_menu_item($menu_id, 0, array(
+        'menu-item-title' =>  __('About'),
+        'menu-item-classes' => 'activity',
+        'menu-item-url' => home_url( '/activity/' ), 
+        'menu-item-status' => 'publish'));
+
+    wp_update_nav_menu_item($menu_id, 0, array(
+        'menu-item-title' =>  __('Products'),
+        'menu-item-classes' => 'members',
+        'menu-item-url' => home_url( '/members/' ), 
+        'menu-item-status' => 'publish'));
+
+    wp_update_nav_menu_item($menu_id, 0, array(
+        'menu-item-title' =>  __('Contact'),
+        'menu-item-classes' => 'groups',
+        'menu-item-url' => home_url( '/groups/' ), 
+        'menu-item-status' => 'publish'));
+
+    if( !has_nav_menu('primary') ){
+        $locations = get_theme_mod('nav_menu_locations');
+        $locations['primary'] = $menu_id;
+        set_theme_mod( 'nav_menu_locations', $locations );
+    }
+  }
+}
+add_action( 'after_switch_theme', "tenupchallenge_install");

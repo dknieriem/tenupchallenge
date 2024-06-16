@@ -1,0 +1,14 @@
+// tenupchallenge: Colors
+
+$colors: (
+  'primary': #081523, //Content text
+  'eyebrow': #01FDAB, //Hero eyebrow text
+  'eyebrow-alt': #0262F0, //White panel eyebrow text
+  'background': #010203, //Menu and footer background
+  'gradient-start': #091523, //Hero background gradient
+  'gradient-end': #0E253F //Hero background gradient
+);
+
+@function color($name) {
+  @return map.get($colors, $name)
+}

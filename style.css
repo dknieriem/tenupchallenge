@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Montserrat-Medium.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Montserrat-SemiBold.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/Montserrat-Bold.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Cousine";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/Cousine-Bold.ttf) format("ttf");
+}
+.icon-menu:before {
+  content: url("assets/icons/menu.svg");
+}
+
+.icon-close:before, *[aria-expanded=true] .nav-open\:icon-close:before {
+  content: url("assets/icons/close.svg");
+}
+
+/*# sourceMappingURL=style.css.map */

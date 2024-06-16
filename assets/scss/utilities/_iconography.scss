@@ -1,0 +1,20 @@
+// tenupchallenge: Iconography
+$icon_dir: 'assets/icons/';
+$icons: (
+  'menu': "menu.svg", //Hamburgeresque Icon
+  'close': "close.svg", //X Close Icon
+  //'10up': "10up_logo.svg", //White panel eyebrow text
+  //'logo': "site_logo.svg", //Menu and footer background
+);
+
+@function icon($name) {
+  @return map.get($icons, $name)
+}
+
+@each $name, $file in $icons {
+  .icon-#{$name} {
+    &:before {
+      content: url($icon_dir + $file);
+    }
+  }
+}

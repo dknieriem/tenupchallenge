@@ -1,2 +1,3 @@
-# twentytenupchallenge
-A WordPress theme for front-end developer assessment
+# tenupchallenge
+
+A WordPress theme for a front-end developer assessment.

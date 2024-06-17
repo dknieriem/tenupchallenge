@@ -46,6 +46,8 @@ There are several concerns to address, probably in a discussion with design.
 
 5. Nav on mobile: Depending on how important the nav menu becomes, I would consider making the header sticky, with the nav stealing focus when open for ease of use on smaller devices. This would probably include an overlay to hide page content behind the menu.
 
+6. Image sizes: Usually I run imgoptim on static theme images to decrease page size. Phone.jpg is 3.18mb and is used only in the background - it could be optimized and served as a srcset with a webp option.
+
 ## Timing
 
 Overall, I'd estimate about 4-6 hours of time went into this exercise:

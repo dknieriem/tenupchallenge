@@ -1,9 +1,11 @@
+// tenupchallenge: Callout block styles
+
 .callout-block {
   position: relative;
 
   &--container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-top: 108px;
     padding-bottom: 90px;
 
@@ -15,14 +17,19 @@
     @media screen and (min-width: 1280px){
       margin: 0 auto;
       max-width: 1100px;
+
+      flex-direction: row;
     }
   }
 
   &--background {
-    // background-size: cover;
-    background-position-x: 89%;
-    background-position-y: 70%;
-    background-size: 130%;
+    background-size: cover;
+
+    @media screen and (min-width: 1280px){
+      background-position-x: 89%;
+      background-position-y: 70%;
+      background-size: 130%;
+    }
     inset: 0;
     position: absolute;
     z-index: -1; // Don't cover static siblings!
@@ -32,7 +39,7 @@
       position: absolute;
       inset: 0;
       content: "";
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(0,0,0,0.3); //TODO: Check w/ design re: overlay gradient
     }
   }
   &--eyebrow {
@@ -58,18 +65,25 @@
 
   // Foreground image options
   &.image-style-bg {
-    .callout-block--image {
+    .callout-block--container {
       overflow: clip;
     }
-    img {
-      position: relative;
-      bottom: -30px;
+    &.callout-block--left .container--right,
+    &.callout-block--right .container--left {
+      margin-top: -108px;
+      margin-bottom: -30px;
+
+      .callout-block--image {
+        height: 100%;
+        background-size: cover;
+      }
     }
-    
   }
 
   &.image-style-overflow {
     .callout-block--image {
+      display: flex;
+      justify-content: center;
 
       @media screen and (min-width: 768px){
         margin-left: -5%;
@@ -79,6 +93,14 @@
       @media screen and (min-width: 1280px){
         margin-left: -15%;
         margin-right: 0%;
+      }
+
+      img { 
+        max-width: 400px; 
+
+        @media screen and (min-width: 768px){
+          max-width: 100%;
+        }
       }
     }
   }
@@ -98,9 +120,10 @@
 
 .callout-block--right {
   .container--right {
-    margin: 0 auto;
+    margin: 0 5%;
     @media screen and (min-width: 768px){
       max-width: 500px;
+      margin: 0 auto;
     }
     @media screen and (min-width: 1280px){
       max-width: 500px;

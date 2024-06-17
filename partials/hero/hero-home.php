@@ -10,5 +10,6 @@
   'cta-secondary-title' => __("Learn More"),
   'cta-secondary-url' => esc_url("/more"),
   'image' => get_template_directory_uri() . '/assets/images/Device_Ipad.png',
-  'classes' => array("hero-home","dark","image-style-bg")
+  'image-style' => "background",
+  'classes' => array("hero-home","dark")
 )); ?>

@@ -7,7 +7,7 @@
   color: #081523;
 }
 
-.text-eyebrow, .dark .button--secondary:focus, .dark .button--secondary:active, .button--secondary:focus, .button--secondary:active, .dark .eyebrow, .dark .callout-block--eyebrow {
+.text-eyebrow, .nav-primary li a:focus, .nav-primary li a:active, .dark .button--secondary:focus, .dark .button--secondary:active, .button--secondary:focus, .button--secondary:active, .dark .eyebrow, .dark .callout-block--eyebrow {
   color: #01FDAB;
 }
 
@@ -162,6 +162,7 @@ h1 {
 
 h2 {
   letter-spacing: 0.015em;
+  line-height: 1.2;
   margin-bottom: 50px;
 }
 
@@ -199,7 +200,6 @@ h2 {
   content: url("assets/icons/close.svg");
 }
 
-/* Reset c/o https://piccalil.li/blog/a-more-modern-css-reset/ */
 /* Box sizing rules */
 *,
 *::before,
@@ -281,7 +281,7 @@ textarea:not([rows]) {
 }
 .callout-block--container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-top: 108px;
   padding-bottom: 90px;
 }
@@ -295,15 +295,21 @@ textarea:not([rows]) {
   .callout-block--container {
     margin: 0 auto;
     max-width: 1100px;
+    flex-direction: row;
   }
 }
 .callout-block--background {
-  background-position-x: 89%;
-  background-position-y: 70%;
-  background-size: 130%;
+  background-size: cover;
   inset: 0;
   position: absolute;
   z-index: -1;
+}
+@media screen and (min-width: 1280px) {
+  .callout-block--background {
+    background-position-x: 89%;
+    background-position-y: 70%;
+    background-size: 130%;
+  }
 }
 .callout-block--background::after {
   z-index: 1;
@@ -321,12 +327,20 @@ textarea:not([rows]) {
   gap: 32px;
   align-items: center;
 }
-.callout-block.image-style-bg .callout-block--image {
+.callout-block.image-style-bg .callout-block--container {
   overflow: clip;
 }
-.callout-block.image-style-bg img {
-  position: relative;
-  bottom: -30px;
+.callout-block.image-style-bg.callout-block--left .container--right, .callout-block.image-style-bg.callout-block--right .container--left {
+  margin-top: -108px;
+  margin-bottom: -30px;
+}
+.callout-block.image-style-bg.callout-block--left .container--right .callout-block--image, .callout-block.image-style-bg.callout-block--right .container--left .callout-block--image {
+  height: 100%;
+  background-size: cover;
+}
+.callout-block.image-style-overflow .callout-block--image {
+  display: flex;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .callout-block.image-style-overflow .callout-block--image {
@@ -338,6 +352,14 @@ textarea:not([rows]) {
   .callout-block.image-style-overflow .callout-block--image {
     margin-left: -15%;
     margin-right: 0%;
+  }
+}
+.callout-block.image-style-overflow .callout-block--image img {
+  max-width: 400px;
+}
+@media screen and (min-width: 768px) {
+  .callout-block.image-style-overflow .callout-block--image img {
+    max-width: 100%;
   }
 }
 
@@ -356,11 +378,12 @@ textarea:not([rows]) {
 }
 
 .callout-block--right .container--right {
-  margin: 0 auto;
+  margin: 0 5%;
 }
 @media screen and (min-width: 768px) {
   .callout-block--right .container--right {
     max-width: 500px;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -392,6 +415,15 @@ textarea:not([rows]) {
   justify-content: center;
   padding: 30px;
 }
+.footer a {
+  transform: scale(1);
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+.footer a:hover {
+  transform: scale(1.05);
+}
 
 #header {
   position: absolute;
@@ -399,12 +431,17 @@ textarea:not([rows]) {
   margin-bottom: -56px;
   display: flex;
   width: 100%;
-  padding-left: 90px;
+  padding-left: 5%;
   padding-right: 60px;
   padding-top: 48px;
   justify-content: space-between;
   align-items: end;
   z-index: 10;
+}
+@media screen and (min-width: 768px) {
+  #header {
+    padding-left: 90px;
+  }
 }
 
 button.nav-toggle {
@@ -412,6 +449,9 @@ button.nav-toggle {
   border: none;
   cursor: pointer;
   padding: 0;
+}
+button.nav-toggle:hover {
+  opacity: 0.8;
 }
 
 *[aria-expanded=true] .nav-open\:block, *[aria-expanded=true] .nav-primary--container {
@@ -457,6 +497,26 @@ button.nav-toggle {
 .block.hero-home .callout-block--container {
   padding-top: 142px;
   padding-bottom: 0;
+  max-width: 100%;
+  flex-direction: row;
+}
+.block.hero-home .container--left {
+  flex-shrink: 1;
+  margin-bottom: 140px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+@media screen and (min-width: 768px) {
+  .block.hero-home .container--left {
+    margin-left: 10%;
+    margin-right: 2%;
+  }
+}
+.block.hero-home .container--right {
+  flex-grow: 1;
+}
+.block.hero-home.image-style-bg.callout-block--left .container--right, .block.hero-home.image-style-bg.callout-block--right .container--left {
+  margin-top: -142px;
 }
 
 /*# sourceMappingURL=style.css.map */

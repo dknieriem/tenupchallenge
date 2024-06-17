@@ -1,5 +1,7 @@
 <?php
   /**
+   * Left-aligned callout variant.
+   * 
    * Variables: 
    * background-type as text ('none', 'color', 'gradient', 'image')
    * background-image as URL (if background-type == 'image')
@@ -10,6 +12,7 @@
    * description as text
    * image as URL
    * image-alt as text
+   * image-style as text
    * cta-main-title as text
    * cta-main-url as URL
    * cta-secondary-title as text
@@ -41,12 +44,15 @@
       "gradient-to-" . esc_html($args['background-color-1']),
     ));
   }
+
+  if(array_key_exists('image-style', $args) && $args['image-style'] == "background") {
+    $block_classes = array_merge($block_classes, array("image-style-bg"));
+  }
 ?>
 
 <div class="<?php echo implode(' ', $block_classes) ?>">
-  <?php if ($args['background-type'] === "image" && array_key_exists("background-image", $args)): ?>
+  <?php if (array_key_exists("background-type", $args) && $args['background-type'] === "image" && array_key_exists("background-image", $args)): ?>
     <div class="callout-block--background" style="background-image: url('<?php echo esc_url($args["background-image"]) ?>' );">
-      <!--<img src="<?php echo esc_url($args['background-image']) ?>" />-->
     </div>
   <?php endif ?>
   <div class="callout-block--container">
@@ -78,9 +84,14 @@
     </div>
     <div class="container--right">
       <?php if (array_key_exists("image", $args)): ?>
-        <div class="callout-block--image">
+        <?php if(array_key_exists('image-style', $args) && $args['image-style'] == "background"): ?>
+        <div class="callout-block--image" style="background-image: url(<?php echo esc_url($args['image']) ?>);">
+        </div>
+        <?php else: ?>
+          <div class="callout-block--image">
           <img alt="<?php if (array_key_exists('image-alt', $args)) { echo esc_html($args['image-alt']); }?>" src="<?php echo esc_url($args['image']) ?>" />
         </div>
+        <?php endif ?>
       <?php endif ?>
     </div>
   </div>

@@ -1,8 +1,34 @@
 
+// tenupchallenge: Home hero style overrides
+// Note: Home hero uses callout-block--left styles, these override defaults
+
 .block.hero-home {
   .callout-block--container {
     padding-top: calc(108px + 34px); //Small extra padding for the nav menu
     padding-bottom: 0;
+    max-width: 100%;
+    flex-direction: row;
   }
+
+  .container--left {
+    flex-shrink: 1;
+    margin-bottom: 140px;
+    margin-left: 5%;
+    margin-right: 5%;
   
+
+    @media screen and (min-width: 768px){
+      margin-left: 10%;
+      margin-right: 2%;
+    }
+  }
+  .container--right {
+    flex-grow: 1;
+  }
+  &.image-style-bg {
+    &.callout-block--left .container--right,
+    &.callout-block--right .container--left {
+      margin-top: calc(-108px - 34px);
+    }
+  }
 }

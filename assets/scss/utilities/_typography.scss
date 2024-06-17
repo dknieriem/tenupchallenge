@@ -65,6 +65,7 @@ h1 {
 h2 {
   @extend .text-xl, .text-weight-bold;
   letter-spacing: 0.015em;
+  line-height: 1.2;
   margin-bottom: 50px;
 }
 

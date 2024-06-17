@@ -1,5 +1,7 @@
 // tenupchallenge: Main style sheet
 
+// 1. Load all utilities - mixins, variables, reusable classes, etc
 @import "utilities";
 
+// 2. Load Content-specific styles, broken down by the partials they correspond to
 @import "partials";

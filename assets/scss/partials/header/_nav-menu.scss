@@ -1,8 +1,7 @@
+// tenupchallenge: Nav menu styles
+
 nav#nav {
 
-  // &[aria-expanded="true"] {
-  //   display: block;
-  // }
 }
 
 button.nav-toggle {
@@ -10,6 +9,11 @@ button.nav-toggle {
   border: none;
   cursor: pointer;
   padding: 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
 }
 
 *[aria-expanded="true"] .nav-open\:block {
@@ -47,6 +51,11 @@ button.nav-toggle {
       &:hover {
         opacity: 0.8;
       }
+
+      &:focus, &:active {
+        @extend .text-eyebrow;
+      }
+    
     }
   }
   .close-btn-container {

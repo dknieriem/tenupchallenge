@@ -1,5 +1,7 @@
 <?php
   /**
+   * Centered callout variant. Note: This template does not include a foreground image, as the centered
+   * content requires a background image
    * Variables: 
    * background-type as text ('none', 'color', 'gradient', 'image')
    * background-image as URL (if background-type == 'image')
@@ -8,8 +10,9 @@
    * eyebrow as text
    * header as text
    * description as text
-   * image as URL
-   * image-alt as text
+   * -image as URL- (excluded)
+   * -image-alt as text- (excluded)
+   * -image-style as text- (excluded)
    * cta-main-title as text
    * cta-main-url as URL
    * cta-secondary-title as text

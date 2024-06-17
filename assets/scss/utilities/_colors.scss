@@ -12,3 +12,22 @@ $colors: (
 @function color($name) {
   @return map.get($colors, $name)
 }
+
+@each $name, $hex in $colors {
+  .text-#{$name} {
+    color: $hex;
+  }
+}
+
+@each $name, $hex in $colors {
+  .gradient-from-#{$name} {
+    --gradient-from-variable: #{$hex};
+  }
+  .gradient-to-#{$name} {
+    --gradient-to-variable: #{$hex};
+  }
+}
+
+.gradient {
+  background: linear-gradient(var(--gradient-from-variable), var(--gradient-to-variable))
+}

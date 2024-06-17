@@ -14,5 +14,9 @@
             "email": "donald.knieriem@gmail.com"
         }
     ],
-    "require": {}
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }

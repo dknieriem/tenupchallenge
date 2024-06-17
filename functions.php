@@ -90,7 +90,7 @@ function tenupchallenge_scripts() {
 	wp_enqueue_style( 'tenupchallenge-style', get_stylesheet_uri() );
 	wp_style_add_data( 'tenupchallenge-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'tenupchallenge-nav', get_template_directory_uri() . '/js/nav.js', array(), false, true );
+	wp_enqueue_script( 'tenupchallenge-nav', get_template_directory_uri() . '/assets/js/nav.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'tenupchallenge_scripts' );
 

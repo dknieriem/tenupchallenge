@@ -1,3 +1,79 @@
+.text-primary {
+  color: #081523;
+}
+
+.text-eyebrow {
+  color: #01FDAB;
+}
+
+.text-eyebrow-alt {
+  color: #0262F0;
+}
+
+.text-background {
+  color: #010203;
+}
+
+.text-gradient-start {
+  color: #091523;
+}
+
+.text-gradient-end {
+  color: #0E253F;
+}
+
+.gradient-from-primary {
+  --gradient-from-variable: #081523;
+}
+
+.gradient-to-primary {
+  --gradient-to-variable: #081523;
+}
+
+.gradient-from-eyebrow {
+  --gradient-from-variable: #01FDAB;
+}
+
+.gradient-to-eyebrow {
+  --gradient-to-variable: #01FDAB;
+}
+
+.gradient-from-eyebrow-alt {
+  --gradient-from-variable: #0262F0;
+}
+
+.gradient-to-eyebrow-alt {
+  --gradient-to-variable: #0262F0;
+}
+
+.gradient-from-background {
+  --gradient-from-variable: #010203;
+}
+
+.gradient-to-background {
+  --gradient-to-variable: #010203;
+}
+
+.gradient-from-gradient-start {
+  --gradient-from-variable: #091523;
+}
+
+.gradient-to-gradient-start {
+  --gradient-to-variable: #091523;
+}
+
+.gradient-from-gradient-end {
+  --gradient-from-variable: #0E253F;
+}
+
+.gradient-to-gradient-end {
+  --gradient-to-variable: #0E253F;
+}
+
+.gradient {
+  background: linear-gradient(var(--gradient-from-variable), var(--gradient-to-variable));
+}
+
 @font-face {
   font-family: "Montserrat";
   font-style: normal;

@@ -1,4 +1,4 @@
-<?php get_template_part( 'partials/content/callout-text-left', null, array(
+<?php get_template_part( 'partials/content/callout-text', 'left', array(
   'background-type' => 'gradient',
   'background-color-0' => 'gradient-start',
   'background-color-1' => 'gradient-end',

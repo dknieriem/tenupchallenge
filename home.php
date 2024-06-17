@@ -8,7 +8,7 @@ get_header(); ?>
 <!-- hero -->
 <?php get_template_part( 'partials/hero/hero-home'); ?>
 <!-- callout-text-right -->
-<?php get_template_part( 'partials/content/callout-text-right', null, array(
+<?php get_template_part( 'partials/content/callout-text', 'right', array(
   'background-type' => 'none',
   'eyebrow' => __("Eyebrow"), 
   'header' => __("Generating relevant & engaging content"),
@@ -17,7 +17,7 @@ get_header(); ?>
 )); ?>
 
 <!-- callout-text-center-->
-<?php get_template_part( 'partials/content/callout-text-center', null, array(
+<?php get_template_part( 'partials/content/callout-text', 'center', array(
   'background-type' => 'none',
   'eyebrow' => __("Eyebrow"), 
   'header' => __("Engage brand and increase viewability"),

@@ -2,6 +2,10 @@
 
 A WordPress theme for a front-end developer assessment.
 
+## Installation
+
+Download the .zip, and unzip in your wp-content/themes directory.
+
 ## Process
 
 I began with a bottom-up approach, defining the atomic parts of the design - typography, colors, imagery.

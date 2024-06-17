@@ -4,7 +4,7 @@ A WordPress theme for a front-end developer assessment.
 
 ## Installation
 
-Download the .zip, and unzip in your wp-content/themes directory.
+[Download the .zip](https://github.com/dknieriem/twentytenupchallenge/archive/refs/heads/main.zip), and unzip in your wp-content/themes directory.
 
 ## Process
 

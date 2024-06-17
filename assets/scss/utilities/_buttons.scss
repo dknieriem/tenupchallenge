@@ -1,0 +1,45 @@
+.button--primary {
+  @extend .text-style-default;
+
+  border: 1px solid color('background');
+  border-radius: 60px;
+  padding: 20px 30px;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus, &:active {
+    border: 1px solid color('eyebrow');
+  }
+
+  .dark & {
+    @extend .text-white;
+    border: 1px solid color('white');
+
+    &:focus, &:active {
+      border: 1px solid color('eyebrow');
+    }
+  }
+}
+
+.button--secondary {
+  @extend .text-style-default;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus, &:active {
+    @extend .text-eyebrow;
+  }
+
+  .dark & {
+    &:focus, &:active {
+      @extend .text-eyebrow;
+    }
+  }
+}

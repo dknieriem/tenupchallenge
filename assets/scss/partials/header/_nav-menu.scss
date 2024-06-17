@@ -1,18 +1,62 @@
 nav#nav {
 
-}
-button.nav-open {
-}
-
-*[aria-expanded="true"] .nav-open\:icon-close {
-  @extend .icon-close;
+  // &[aria-expanded="true"] {
+  //   display: block;
+  // }
 }
 
+button.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+*[aria-expanded="true"] .nav-open\:block {
+  display: block;
+}
+.nav-primary--container {
+  @extend .nav-open\:block;
+  
+  display: none;
+  position: absolute;
+  top: 19px;
+  right: 19px;
+}
 .nav-primary {
+  list-style: none;
+  margin: 0;
+  min-width: 264px;
+  padding: 42px;
+
   &--container {
-
+    @extend .bg-background, .text-white;
   }
-  &--list {
+  li {
+    @extend .text-large, .text-weight-bold;
 
+    line-height: 1;
+    margin-bottom: 64px;
+    &:last-child {
+      margin-bottom: calc(64px - 42px);
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
+  .close-btn-container {
+    text-align: right;
+    margin-bottom: 70px;
+  }
+  .icon-close {
+    position: absolute;
+    top: 44px;
+    right: 44px;
+  }
+  
 }

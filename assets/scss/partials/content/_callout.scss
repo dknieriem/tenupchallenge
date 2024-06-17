@@ -1,0 +1,125 @@
+.callout-block {
+  position: relative;
+
+  &--container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 108px;
+    padding-bottom: 90px;
+
+    @media screen and (min-width: 768px){
+      margin: 0 auto;
+      max-width: 90%;
+    }
+
+    @media screen and (min-width: 1280px){
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+  }
+
+  &--background {
+    // background-size: cover;
+    background-position-x: 89%;
+    background-position-y: 70%;
+    background-size: 130%;
+    inset: 0;
+    position: absolute;
+    z-index: -1; // Don't cover static siblings!
+    
+    &::after {
+      z-index: 1;
+      position: absolute;
+      inset: 0;
+      content: "";
+      background-color: rgba(0,0,0,0.3);
+    }
+  }
+  &--eyebrow {
+    @extend .eyebrow;
+  }
+
+  &--header {
+    @extend .header;
+  } 
+
+  &--description {
+    @extend .text-style-default;
+
+    margin-bottom: 60px;
+  }
+
+  &--ctas {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+  }
+
+  // Foreground image options
+  &.image-style-bg {
+    .callout-block--image {
+      overflow: clip;
+    }
+    img {
+      position: relative;
+      bottom: -30px;
+    }
+    
+  }
+
+  &.image-style-overflow {
+    .callout-block--image {
+
+      @media screen and (min-width: 768px){
+        margin-left: -5%;
+        margin-right: 5%;
+      }
+  
+      @media screen and (min-width: 1280px){
+        margin-left: -15%;
+        margin-right: 0%;
+      }
+    }
+  }
+}
+
+.callout-block--left {
+  .container--left {
+    margin: 0 auto;
+    @media screen and (min-width: 768px){
+      max-width: 500px;
+    }
+    @media screen and (min-width: 1280px){
+      max-width: 500px;
+    }
+  }
+}
+
+.callout-block--right {
+  .container--right {
+    margin: 0 auto;
+    @media screen and (min-width: 768px){
+      max-width: 500px;
+    }
+    @media screen and (min-width: 1280px){
+      max-width: 500px;
+    }
+  }
+}
+
+.callout-block--center {
+  .container--center {
+    margin: 0 auto;
+    text-align: center;
+    @media screen and (min-width: 768px){
+      max-width: 500px;
+    }
+    @media screen and (min-width: 1280px){
+      max-width: 500px;
+    }
+  }
+  .callout-block--ctas {
+    justify-content: center;
+  }
+}

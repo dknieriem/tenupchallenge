@@ -1,34 +1,75 @@
-// tenupchallenge: Typography
+// tenupchallenge: Providing typography classes and setting body default font
 
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(assets/fonts/Montserrat-Medium.ttf) format('ttf');
+$font-sizes: (
+  'normal': 1.25rem, //20px Content text
+  'large': 1.75rem, //28px Menu items
+  'xl': 2.25rem, //36px Callout Heading
+  '2xl': 4rem, //64px Hero Heading
+);
+
+$font-families: (
+  'montserrat': '"Montserrat", sans-serif',
+  'cousine': '"Cousine", monospace',
+);
+
+$font-weights: (
+  'medium': 400,
+  'semibold': 600,
+  'bold': 700,
+);
+
+@each $name, $dim in $font-sizes {
+  .text-#{$name} {
+    font-size: $dim;
+  }
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(assets/fonts/Montserrat-SemiBold.ttf) format('ttf');
+@each $name, $family in $font-families {
+  .text-#{$name} {
+    font-family: #{$family};
+  }
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(assets/fonts/Montserrat-Bold.ttf) format('ttf');
+@each $name, $weight in $font-weights {
+  .text-weight-#{$name} {
+    font-weight: $weight;
+  }
 }
 
-@font-face {
-  font-family: 'Cousine';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(assets/fonts/Cousine-Bold.ttf) format('ttf');
+.text-style-default {
+  @extend .text-normal, .text-montserrat, .text-weight-medium;
+
+  .dark & {
+    @extend .text-white;
+  }
 }
 
+body {
+  @extend .text-style-default;
+}
+
+.eyebrow {
+  @extend .text-normal, .text-cousine, .text-weight-bold, .text-eyebrow-alt;
+
+  .dark & {
+    @extend .text-eyebrow;
+  }
+}
+
+h1 {
+  @extend .text-2xl, .text-weight-bold;
+  letter-spacing: 0.015em;
+  margin-bottom: 56px;
+}
+
+h2 {
+  @extend .text-xl, .text-weight-bold;
+  letter-spacing: 0.015em;
+  margin-bottom: 50px;
+}
+
+.header {
+  .dark & {
+    @extend .text-white;
+  }
+}

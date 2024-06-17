@@ -1,12 +1,13 @@
 // tenupchallenge: Colors
-
+@use "sass:map";
 $colors: (
   'primary': #081523, //Content text
   'eyebrow': #01FDAB, //Hero eyebrow text
   'eyebrow-alt': #0262F0, //White panel eyebrow text
   'background': #010203, //Menu and footer background
   'gradient-start': #091523, //Hero background gradient
-  'gradient-end': #0E253F //Hero background gradient
+  'gradient-end': #0E253F, //Hero background gradient
+  'white': #FFFFFF, // White text in nav
 );
 
 @function color($name) {
@@ -25,6 +26,9 @@ $colors: (
   }
   .gradient-to-#{$name} {
     --gradient-to-variable: #{$hex};
+  }
+  .bg-#{$name} {
+    background-color: #{$hex};
   }
 }
 

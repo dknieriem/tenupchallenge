@@ -15,12 +15,13 @@ function toggleNav(){
   if (nav == null){
     return;
   }
-  let toggle = nav.querySelector(".nav-toggle");
+  let toggles = nav.querySelectorAll(".nav-toggle");
   let menu = nav.querySelector(".nav-primary");
 
-  if (toggle == null || menu == null){
+  if (toggles == null || menu == null){
     return;
   }
-
-  toggle.addEventListener( 'click', toggleNav.bind(toggle))
+  toggles.forEach(toggle => {
+    toggle.addEventListener( 'click', toggleNav.bind(nav))
+  });
 })()
